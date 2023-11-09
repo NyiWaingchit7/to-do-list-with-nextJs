@@ -12,7 +12,7 @@ export default function Home() {
   const [serverdata, setServerdata] = useState<ToDoList[]>([]);
 
   const handleCreateList = async () => {
-    const response = await fetch(`${config.apiBaseUrl}`, {
+    const response = await fetch(`${config.apiBaseUrl}/api/to-do-list`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ description }),
@@ -22,7 +22,7 @@ export default function Home() {
     fetchData();
   };
   const fetchData = async () => {
-    const response = await fetch(`${config.apiBaseUrl}`);
+    const response = await fetch(`${config.apiBaseUrl}/api/to-do-list`);
 
     const { data } = await response.json();
 

@@ -17,7 +17,9 @@ export default function UpdatList({
 }: prop) {
   const [updateDescription, setDescription] = useState<string | undefined>();
   const fetchOneData = async () => {
-    const response = await fetch(`${config.apiBaseUrl}?id=${id}`);
+    const response = await fetch(
+      `${config.apiBaseUrl}/api/to-do-list?id=${id}`
+    );
 
     const { data } = await response.json();
     console.log(data);
@@ -28,11 +30,14 @@ export default function UpdatList({
   const handleUpdate = async () => {
     console.log("success click");
 
-    const response = await fetch(`${config.apiBaseUrl}?id=${id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ description: updateDescription }),
-    });
+    const response = await fetch(
+      `${config.apiBaseUrl}/api/to-do-list?id=${id}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ description: updateDescription }),
+      }
+    );
     fetchData();
   };
 

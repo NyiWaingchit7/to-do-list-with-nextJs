@@ -14,9 +14,12 @@ const List = ({ data, fetchData }: prop) => {
   const [id, setId] = useState<number>(0);
 
   const handleDelete = async (id: number) => {
-    const response = await fetch(`${config.apiBaseUrl}?id=${id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `${config.apiBaseUrl}/api/to-do-list?id=${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     fetchData();
   };
 
