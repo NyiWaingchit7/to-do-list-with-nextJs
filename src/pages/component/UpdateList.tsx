@@ -22,7 +22,7 @@ export default function UpdatList({
     const { data } = await response.json();
     console.log(data);
 
-    setDescription(data.description);
+    setDescription(data?.description);
   };
 
   const handleUpdate = async () => {

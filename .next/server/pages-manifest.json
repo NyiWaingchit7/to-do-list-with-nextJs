@@ -1,10 +1,7 @@
 {
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/hello": "pages/api/hello.js",
-  "/api/to-do-list": "pages/api/to-do-list.js",
-  "/component/List": "pages/component/List.js",
-  "/component/UpdateList": "pages/component/UpdateList.js",
   "/": "pages/index.js",
-  "/_error": "pages/_error.js"
+  "/api/to-do-list": "pages/api/to-do-list.js"
 }

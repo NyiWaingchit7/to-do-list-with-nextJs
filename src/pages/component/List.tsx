@@ -23,7 +23,7 @@ const List = ({ data, fetchData }: prop) => {
   return (
     <div className="">
       <h1 className=" text-2xl text-center">Your To Do List</h1>
-      {data.map((d, index) => {
+      {data?.map((d, index) => {
         return (
           <div key={d.id} className=" my-9">
             <div className=" flex  justify-around my-5 ">

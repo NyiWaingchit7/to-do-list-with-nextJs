@@ -26,8 +26,9 @@ export default function Home() {
 
     const { data } = await response.json();
 
-    setServerdata(data);
-    console.log(data);
+    if (data) {
+      setServerdata(data);
+    }
   };
 
   useEffect(() => {
