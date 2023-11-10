@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../../utils/db";
 import { Meera_Inimai } from "next/font/google";
-const allowCors = (fn: any) => async (req: any, res: any) => {
+export const allowCors = (fn: any) => async (req: any, res: any) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
   // another common pattern
@@ -64,4 +64,4 @@ export default async function handler(
   }
   res.send("bad method");
 }
-module.exports = allowCors(handler);
+allowCors(handler);
