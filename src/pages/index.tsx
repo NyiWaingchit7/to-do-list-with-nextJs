@@ -25,6 +25,7 @@ export default function Home() {
     const response = await fetch(`${config.apiBaseUrl}/api/to-do-list`);
 
     const { data } = await response.json();
+    
 
     if (data) {
       setServerdata(data);
